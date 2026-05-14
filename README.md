@@ -16,7 +16,7 @@
 
 ## 🎯 Objetivo
 
-O simulador coloca o jogador no papel de alguém tentando conquistar uma pessoa especial. A cada rodada, você toma decisões que afetam o interesse, a confiança e o humor da outra pessoa. O objetivo é chegar ao **namoro** antes de acabar o tempo — sem deixar o interesse cair a zero.
+O simulador coloca o jogador no papel de um rapaz tentando conquistar a garota mais gata da faculdade. A cada rodada, você toma decisões que afetam o interesse, a confiança e o humor da outra pessoa. O objetivo é chegar ao **namoro** antes de acabar o tempo e não sobrar nada para o beta — sem deixar o interesse cair a zero.
 
 ---
 
