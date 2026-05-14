@@ -76,7 +76,7 @@ projeto_simulador/
 | `confianca` | `30` | 0–100 | Confiança que a pessoa sente — afeta o sucesso dos encontros |
 | `humor` | `50` | 0–100 | Estado de espírito atual — influencia as reações |
 | `ciclo` | `1` | 1–10 | Rodada atual (semana do jogo) |
-| `relacao` | `"desconhecidos"` | — | Estágio: desconhecidos → amigos → crush → **namoro** |
+| `relacao` | `"desconhecidos"` | — | Estágio: desconhecidos → amigos → ficantes → **namoro** |
 
 ---
 
@@ -84,18 +84,18 @@ projeto_simulador/
 
 A cada rodada, escolha uma de 3 ações:
 
-### A — 💬 Mandar mensagem fofa
+### A — 💬 Mandar flerte por mensagem (Pai tá chave) 
 - `interesse` **+10** se `humor > 50`, ou **+5** se `humor ≤ 50`
 - `confianca` **+5**
 - `humor` **+5**
 - ⚠️ Usado 3 vezes seguidas: `interesse` **-15** (enjoativo)
 
-### B — 📅 Marcar um encontro
+### B — 📅 Marcar um encontro (Sem pressa)
 - `interesse` **+20** se `confianca ≥ 50`, ou **-10** se `confianca < 50`
 - `confianca` **+10** e `humor` **+15** se o encontro for bem-sucedido
 - ✅ Condição de sucesso: `confianca ≥ 50` **e** `humor > 40`
 
-### C — 🌿 Dar espaço
+### C — 🌿 Dar espaço (Calma Moreno)
 - `interesse` **-5**
 - `humor` **+10**
 - `confianca` **+3**
