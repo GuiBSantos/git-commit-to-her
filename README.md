@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# 💘 Simulador de Conquista
+# 💘 Git Commit to Her (Simulador de Conquista)
 
 **Simulador interativo em Python**
 
