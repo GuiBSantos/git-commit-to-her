@@ -1,4 +1,4 @@
-# Lógica de decisões e consequências
+# Lógica de decisões e consequência
 
 def aplicar_decisao(opcao, estado):
     """
