@@ -6,13 +6,14 @@ def exibir_status(estado):
     É chamada no início de cada rodada para o jogador saber
     como as coisas estão antes de tomar uma decisão.
     """
+    nome_garota = estado["perfil"]["nome"]
 
     print("\n" + "=" * 40)
-    print(f"  💘 git-commit-to-her  |  Semana {estado['ciclo']}")
+    print(f"  💘 Conquistando {nome_garota}  |  Semana {estado['ciclo']}")
     print("=" * 40)
     print(f"  Relacionamento: {estado['relacao'].upper()}")
-    print(f"  Interesse:  {estado['interesse']}/100")
-    print(f"  Confiança:  {estado['confianca']}/100")
+    print(f"  Interesse de {nome_garota}: {estado['interesse']}/100")
+    print(f"  Confiança dela: {estado['confianca']}/100")
     print(f"  Humor dela: {estado['humor']}/100")
     print("=" * 40)
 
@@ -43,20 +44,21 @@ def exibir_resultado_final(estado):
     Mostra a mensagem de fim de jogo.
     Pode ser vitória, derrota ou tempo esgotado.
     """
+    nome_garota = estado["perfil"]["nome"]
 
     print("\n" + "=" * 40)
 
     if estado["relacao"] == "namoro":
-        print("    VOCÊ CONSEGUIU! ELA ACEITOU NAMORAR!")
+        print(f"    VOCÊ CONSEGUIU! {nome_garota.upper()} ACEITOU NAMORAR!")
         print(f"  Durou {estado['ciclo']} semanas de conquista.")
 
     elif estado["interesse"] <= 0:
-        print("   DERROTA — ela perdeu o interesse.")
+        print(f"   DERROTA — {nome_garota} perdeu o interesse.")
         print("  Talvez da próxima vez com mais calma...")
 
     else:
         print("   TEMPO ESGOTADO — 10 semanas se passaram.")
-        print(f"  Vocês ficaram em: {estado['relacao']}")
+        print(f"  Vocês e {nome_garota} ficaram em: {estado['relacao']}")
         print("  Quase lá... tente de novo!")
 
     print("=" * 40)
