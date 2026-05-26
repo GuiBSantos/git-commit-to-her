@@ -14,7 +14,8 @@ estado = {
     "ciclo": 1,
     "relacao": "desconhecidos",
     "mensagens_seguidas": 0,
-    "perfil": perfil_ativo
+    "perfil": perfil_ativo,
+    "historico": []
 }
 
 print("\n Bem-vindo ao git-commit-to-her!")
@@ -32,12 +33,17 @@ while estado["ciclo"] <= 10 and estado["interesse"] > 0:
     exibir_status(estado)
     pode_encontro = checar_condicao_encontro(estado)
     opcao = exibir_menu(pode_encontro)
+    
+    estado["historico"].append(opcao)
+    
     estado = aplicar_decisao(opcao, estado)
     estado = verificar_limites(estado)
     estado = atualizar_relacao(estado)
+    
     resultado = verificar_vitoria_derrota(estado)
     if resultado != "continua":
         break
+
     estado["ciclo"] += 1
 
 exibir_resultado_final(estado)
