@@ -12,7 +12,7 @@ def atualizar_relacao(estado):
         estado["relacao"] = "Pretendente"
         print("\n🧡 Ela te vê como um pretendente agora! As coisas estão esquentando.")
 
-    elif relacao_atual == "Pretedente" and estado["interesse"] >= 90 and estado["confianca"] >= 75:
+    elif relacao_atual == "Pretendente" and estado["interesse"] >= 90 and estado["confianca"] >= 75:
         estado["relacao"] = "namoro"
         print("\n❤️  Ela aceitou namorar! Você conseguiu!")
 
