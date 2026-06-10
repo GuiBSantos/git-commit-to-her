@@ -22,26 +22,40 @@ def exibir_menu(pode_encontro):
     """
     Mostra as opções de ação disponíveis para o jogador.
     Recebe um True ou False para avisar se o encontro é uma boa ideia.
+    Garante que a entrada do jogador seja válida.
     Retorna a opção que o jogador digitou.
     """
 
-    print("\nO que você vai fazer hoje?")
-    print("  [A] Mandar uma mensagem fofa")
+    opcoes_validas = ["A", "B", "C", "D", "E", "F"]
+    opcao_escolhida = ""
 
-    if pode_encontro:
-        print("  [B] Marcar um encontro  ✅ (bom momento!)")
-    else:
-        print("  [B] Marcar um encontro  ⚠️  (pode ser cedo demais)")
+    while opcao_escolhida not in opcoes_validas:
+        print("\nO que você vai fazer hoje?")
+        print("  [A] Mandar uma mensagem fofa")
 
-    print("  [C] Dar espaço hoje")
+        if pode_encontro:
+            print("  [B] Marcar um encontro  ✅ (bom momento!)")
+        else:
+            print("  [B] Marcar um encontro  ⚠️  (pode ser cedo demais)")
 
-    opcao = input("\nDigite A, B ou C: ")
-    return opcao
+        print("  [C] Dar espaço hoje")
+        print("  [D] Enviar um meme engraçado")
+        print("  [E] Fazer um elogio sincero")
+        print("  [F] Puxar um assunto profundo")
+
+        opcao = input("\nDigite a sua escolha (A a F): ").strip().upper()
+        
+        if opcao in opcoes_validas:
+            opcao_escolhida = opcao
+        else:
+            print("\n❌ Opção inválida! Por favor, escolha uma das opções válidas.")
+
+    return opcao_escolhida
 
 
 def exibir_resultado_final(estado):
     """
-    Mostra a mensagem de fim de jogo.
+    Mostra a mensagem de fim de jogo e o histórico de ações.
     Pode ser vitória, derrota ou tempo esgotado.
     """
     nome_garota = estado["perfil"]["nome"]
@@ -60,5 +74,10 @@ def exibir_resultado_final(estado):
         print("   TEMPO ESGOTADO — 10 semanas se passaram.")
         print(f"  Vocês e {nome_garota} ficaram em: {estado['relacao']}")
         print("  Quase lá... tente de novo!")
+        
+    print("-" * 40)
+    print("📜 HISTÓRICO DE AÇÕES:")
+    for ciclo, acao in enumerate(estado.get("historico", []), 1):
+        print(f"  Semana {ciclo}: Opção {acao}")
 
     print("=" * 40)
